@@ -1,0 +1,7 @@
+<button mat-raised-button color="primary" (click)="goBack()">
+  <mat-icon>arrow_back</mat-icon>
+</button>
+<app-band-card
+  [selectedBand]="band$ | async"
+  (received)="showReceivedValue($event)"
+></app-band-card>
