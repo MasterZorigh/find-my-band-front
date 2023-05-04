@@ -1,0 +1,62 @@
+<h2 mat-dialog-title>{{ title }}</h2>
+
+<form [formGroup]="bandForm" (ngSubmit)="onSubmit()">
+  <div class="form">
+    <mat-form-field appearance="outline">
+      <mat-label>identifiant</mat-label>
+      <input matInput formControlName="id" readonly />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nom du groupe</mat-label>
+      <input matInput formControlName="bandName" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Pays</mat-label>
+      <input matInput formControlName="bandCountry" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Genre Musical</mat-label>
+      <mat-select formControlName="bandGenre">
+        <mat-option *ngFor="let bandGenre of bandGenres" [value]="bandGenre">
+          {{ bandGenre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nb de membres</mat-label>
+      <input matInput formControlName="bandMembers" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Date de création</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="dateOfBirth" />
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Morceau réf.</mat-label>
+      <input matInput formControlName="bandTopSong" />
+    </mat-form-field>
+  </div>
+
+  <mat-dialog-actions align="end">
+    <button mat-button type="button" mat-dialog-close>Annuler</button>
+    <button
+      mat-raised-button
+      type="submit"
+      cdkFocusInitial
+      color="warn"
+      [disabled]="!bandForm.valid || !bandForm.dirty"
+    >
+      {{ submitBtnName }}
+    </button>
+  </mat-dialog-actions>
+</form>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lp-dim-angular-vm": {
+      "hosting": {
+        "iut-app": [
+          "lp-dim-angular-vm"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lp-dim-angular-vm"
+  }
+}
