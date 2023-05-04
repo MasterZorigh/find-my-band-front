@@ -15,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'band',
-    loadChildren: () => import('./student/band.module').then((m) => m.BandModule),
+    loadChildren: () => import('./band/band.module').then((m) => m.BandModule),
   },
   {
     path: '**',
