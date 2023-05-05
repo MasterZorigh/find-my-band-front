@@ -1,7 +1,42 @@
 <button mat-raised-button color="primary" (click)="goBack()">
   <mat-icon>arrow_back</mat-icon>
 </button>
-<app-band-card
-  [selectedBand]="band$ | async"
-  (received)="showReceivedValue($event)"
-></app-band-card>
+
+<div class="table-container">
+  <table class="band-details-table">
+    <tr>
+      <th>Nom du Groupe</th>
+      <td>{{ (band$ | async)?.bandName }}</td>
+    </tr>
+    <tr>
+      <th>Pays</th>
+      <td>{{ (band$ | async)?.bandCountry }}</td>
+    </tr>
+    <tr>
+      <th>Genre Musical</th>
+      <td>{{ (band$ | async)?.bandGenre }}</td>
+    </tr>
+    <tr>
+      <th>Membres (total)</th>
+      <td>{{ (band$ | async)?.bandMembers }}</td>
+    </tr>
+    <tr>
+      <th>Date de Création</th>
+      <td>{{ (band$ | async)?.dateOfBirth }}</td>
+    </tr>
+    <tr>
+      <th>Top Titre</th>
+      <td>{{ (band$ | async)?.bandTopSong }}</td>
+    </tr>
+  </table>
+
+  <!-- <div *ngIf="(band$ | async)?.youtubeVideoId">
+    <h3>Lecture de "{{ (band$ | async)?.bandTopSong }}"</h3>
+    <ngx-youtube-player
+      [videoId]="(band$ | async)?.youtubeVideoId"
+      [height]="360"
+      [width]="640"
+      [playerVars]="{ autoplay: 0, controls: 1 }"
+    ></ngx-youtube-player>
+  </div> -->
+</div>
