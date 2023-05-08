@@ -101,8 +101,8 @@
             "prerender": false,
             "ssr": false,
             "browserTarget": "find-my-band:build:production",
-            "firebaseProject": "lp-dim-angular-vm",
-            "firebaseHostingSite": "lp-dim-angular-vm"
+            "firebaseProject": "find-my-band",
+            "firebaseHostingSite": "find-my-band"
           }
         }
       }

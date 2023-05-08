@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  findMyBandBaseUrl: 'https://find-my-band-4bb32.web.app',
+  findMyBandBaseUrl:
+    'https://find-my-band-back-6ngwolbmv-masterzorigh.vercel.app',
 };
